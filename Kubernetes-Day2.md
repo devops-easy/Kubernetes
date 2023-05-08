@@ -96,7 +96,12 @@ kubectl get no -o wide
    * Each Pod in k8s cluster gets a unique ip address
    * All the containers in the Pod share the same network namespace.
 
+
    ![Preview](./Images/k8s-pod.png)
+
+   ![Preview](./Images/k8s-pod0.png)
+
+   ![Preview](./Images/k8s-pod1.png)
 
    ![Preview](./Images/k8s-workload.png)
 
@@ -155,6 +160,9 @@ kubectl get pods nginx-pod -o yaml
     * Succeded
     * Failed
     * Unknown
+* Pod life cycle [Refer Here](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/)
+* Pod Phases [Refer Here](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-phase)
+* Pod restart policy: Always, Never, OnFailure 
 
 ## Container States in k8s pod
 * Waiting

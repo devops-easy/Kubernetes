@@ -43,7 +43,7 @@ sudo systemctl restart containerd
 ```
 
 * AS a root user run ``` kubeadm init ``` in ``` Master ```
-* After that run ```` kubeadm join ``` in ``` Node ```
+* After that run ``` kubeadm join ``` in ``` Node ```
 * Now from manager execute ``` kubectl get nodes ```
 
 ## CNI – Container Network Interface
@@ -76,6 +76,9 @@ sudo systemctl restart containerd
 * Add other nodes to the cluster
 * Install any CNI implementation (Weavenet)
 
+```
+kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
+```
 ## Lets verify the Resources
 * To view the api-resources
 

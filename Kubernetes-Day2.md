@@ -259,7 +259,7 @@ kubectl delete -f <filename>
     apiVersion: v1
     kind: Pod
     metadata:
-      name: restartnever
+      name: restartalways
     spec:
       restartPolicy: Always
       containers:
@@ -291,36 +291,35 @@ kubectl delete -f <filename>
     * OnFailure
         * exit code => success
         * exit code => failure
+    ```yml
+    ---
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: restartfailure
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: failure
+          image: alpine
+          args:
+            - sleep
+            - 3SM
+    ---
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: restartfailure2
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: success
+          image: alpine
+          args:
+            - sleep
+            - 3s
 
-        ```yaml
-         ---
-            apiVersion: v1
-            kind: Pod
-            metadata:
-            name: restartfailure
-            spec:
-            restartPolicy: OnFailure
-            containers:
-                - name: failure
-                image: alpine
-                args:
-                    - sleep
-                    - 3SM
-            ---
-            apiVersion: v1
-            kind: Pod
-            metadata:
-            name: restartfailure2
-            spec:
-            restartPolicy: OnFailure
-            containers:
-                - name: success
-                image: alpine
-                args:
-                    - sleep
-                    - 3s
-        
-        ```
+    ```
 
 
 

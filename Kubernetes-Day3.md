@@ -162,7 +162,7 @@ spec:
 * Now if we want to access the application in container we can do port-forward (not recommended approach)
 
 ```
-kubecl port-forward --address "0.0.0.0" httpd-pod 8080:80
+kubectl port-forward --address "0.0.0.0" httpd-pod 8080:80
 ```
 
 ## Controllers in K8s

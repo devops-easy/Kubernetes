@@ -142,7 +142,7 @@ kubectl exec alpine -it -- /bin/sh
 * Exercise: If we have a pod with 2 container how exec a command on a specific container
 
 ```
-kubectl exec -it 
+kubectl exec -it pod_name -c container_name bash
 ```
 * Lets run a pod which run application(httpd) on some port
 * Now if we want to access the application in container we can do port-forward (not recommended approach)

@@ -145,6 +145,20 @@ kubectl exec alpine -it -- /bin/sh
 kubectl exec -it pod_name -c container_name bash
 ```
 * Lets run a pod which run application(httpd) on some port
+
+```yml
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd-pod
+spec:
+  containers:
+    - name: httpd-cont
+      image: httpd:2
+      ports:
+        - containerPort: 80
+```
 * Now if we want to access the application in container we can do port-forward (not recommended approach)
 
 ```

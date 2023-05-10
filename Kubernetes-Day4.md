@@ -148,6 +148,7 @@ spec:
 * Exercise: Create a replica set with Pod specification with jenkins Pod and ping -c 4 google.com in alpine as init container with restart policy Never. 
 
 ```yml
+---
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:

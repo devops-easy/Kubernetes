@@ -1,3 +1,73 @@
+## Container restart policy
+* Lets try to create a short lived contianer with different restart policies
+    * always (Default)
+
+    ```yaml
+    ---
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: restartalways
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: alpine
+          image: alpine
+          args:
+            - sleep
+            - 3s
+    ```
+
+    * never
+
+    ```yaml
+    ---
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: restartnever
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: alpine
+          image: alpine
+          args:
+            - sleep
+            - 3s
+    ```
+
+    * OnFailure
+        * exit code => success
+        * exit code => failure
+    ```yml
+    ---
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: restartfailure
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: failure
+          image: alpine
+          args:
+            - sleep
+            - 3SM
+    ---
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: restartfailure2
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: success
+          image: alpine
+          args:
+            - sleep
+            - 3s
+
+    ```
 ### Pods can run 3 types of containers
 * Containers => Where we run our applications
 * init containers:
@@ -165,16 +235,3 @@ spec:
 kubectl port-forward --address "0.0.0.0" httpd-pod 8080:80
 ```
 
-## Controllers in K8s
-
-![Preview](./Images/k8s-controller.png)
-
-* Controllers are k8s objects which run other k8s resources. This k8s resource will be part of specification generally in template section.
-* Controllers maintain desired state.
-* Some of the controllers are
-    * Replication Controller/Replica Set
-    * Stateful Sets
-    * Deployments
-    * Jobs
-    * Cron Jobs
-    * Daemonset

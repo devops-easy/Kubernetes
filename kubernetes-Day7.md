@@ -2,7 +2,7 @@
 * Deployment is a k8s object which can help in rolling out and rolling back updates
 * Deployment controls replica set and replica set controls pods
 
-![Preview](./Images/k8s-deployment.png)
+![Preview](./Images/k8s-deployment.PNG)
 
 * Lets create a manifest with some application deployment
 * Check below for the manifests used to create revision 1
@@ -240,7 +240,7 @@ kubectl top pods
 * This workload creates a Pod on every node in the k8s cluster
 * This is generally used for running agents i.e. log agents, backup agents, heart beat/monitoring agents.
 
-![Preview](./Images/daemonset.png)
+![Preview](./Images/daemonset.PNG)
 
 * Lets try to write a manifest for a alpine with sleep 1d
 

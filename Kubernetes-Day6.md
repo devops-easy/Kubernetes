@@ -11,7 +11,7 @@
 * [Refer Here](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for official docs
 * For Deployment Strategies [Refer Here](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.26/#deploymentstrategy-v1-apps)
 
-* Lets try to deploy the two versions.
+* Lets try to deploy the two versions of jenkins application.
 * Check below manifest for the first version of the deployment spec.
 
 ```yml

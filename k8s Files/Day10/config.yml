@@ -22,3 +22,6 @@ spec:
         items:
          - key: sample.config
            path: sample.config
+
+## vi demo.txt
+## kubectl create configmap mymap --from-file=<filename>

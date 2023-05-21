@@ -1,0 +1,40 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: de-aws-managed-disk
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: gp2
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysqldb
+spec:
+  containers:
+    - name: mysqldb
+      image: mysql:8
+      ports:
+        - containerPort: 3306
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: rootroot
+        - name: MYSQL_DATABASE
+          value: deecommerce
+        - name: MYSQL_USER
+          value: dedevops
+        - name: MYSQL_PASSWORD
+          value: dedevopsdedevops
+      volumeMounts:
+        - name: dbvol
+          mountPath: /var/lib/mysql
+  volumes:
+    - name: dbvol
+      persistentVolumeClaim:
+        claimName: de-aws-managed-disk

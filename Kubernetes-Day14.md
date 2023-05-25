@@ -1,5 +1,5 @@
 ## HELM
-* In order to deploy an application on k8s we need to interact with k8s API to create resources, kubctl is the tool we use to do this
+* In order to deploy an application on k8s we need to interact with k8s API to create resources, kubectl is the tool we use to do this
 * We express Kubernetes resources in YAML Files
 * These files are static in nature.
 * Resource files are static:

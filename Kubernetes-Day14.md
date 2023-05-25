@@ -23,7 +23,12 @@
 * [Refer Here](https://bitnami.com/stack/mysql/helm) to view a sample usage of helm chart which installs mysql.
 * Lets try to understand Helm’s subcommands
 
-
+| DNF Subcommands | Helm Subcommands | Purpose |
+|  ---------------| -----------------| ------- |
+| install | install | install an application and its dependencies |
+| upgrade | upgrade | upgrades an application to newer version |
+| downgrade | rollback | reverts the application to previous version |
+| remove | uninstall |delete an application |
 
 * The abstracted complexity of k8s resources:
 
